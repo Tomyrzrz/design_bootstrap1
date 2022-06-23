@@ -23,25 +23,25 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a href="#" class="nav-link active">Home</a>
+            <a href="index.php" class="nav-link active">Home</a>
           </li>
          <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" id="dropdown-4" data-bs-toggle="dropdown" aria-expanded="false">Designs</a>
             <ul class="dropdown-menu" aria-labelledby="dropdown-4">
               <li><a href="ecological.php" class="dropdown-item">Ecological</a></li>
-              <li><a href="#" class="dropdown-item">Modern</a></li>
-              <li><a href="#" class="dropdown-item">Classic</a></li>
-              <li><a href="#" class="dropdown-item">Younger</a></li>
+              <li><a href="modern.php" class="dropdown-item">Modern</a></li>
+              <li><a href="classic.php" class="dropdown-item">Classic</a></li>
+              <li><a href="jounger.php" class="dropdown-item">Younger</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Projects</a>
+            <a href="projects.php" class="nav-link">Projects</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">About</a>
+            <a href="about.php" class="nav-link">About</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Contact</a>
+            <a href="contact.php" class="nav-link">Contact</a>
           </li>
         </ul>
       </div>
@@ -193,25 +193,25 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a href="#" class="nav-link active">Home</a>
+            <a href="index.php" class="nav-link active">Home</a>
           </li>
-          <li class="nav-item dropdown">
+         <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" id="dropdown-4" data-bs-toggle="dropdown" aria-expanded="false">Designs</a>
             <ul class="dropdown-menu" aria-labelledby="dropdown-4">
-              <li><a href="#" class="dropdown-item">Ecological</a></li>
-              <li><a href="#" class="dropdown-item">Modern</a></li>
-              <li><a href="#" class="dropdown-item">Classic</a></li>
-              <li><a href="#" class="dropdown-item">Younger</a></li>
+              <li><a href="ecological.php" class="dropdown-item">Ecological</a></li>
+              <li><a href="modern.php" class="dropdown-item">Modern</a></li>
+              <li><a href="classic.php" class="dropdown-item">Classic</a></li>
+              <li><a href="jounger.php" class="dropdown-item">Younger</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Projects</a>
+            <a href="projects.php" class="nav-link">Projects</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">About</a>
+            <a href="about.php" class="nav-link">About</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Contact</a>
+            <a href="contact.php" class="nav-link">Contact</a>
           </li>
         </ul>
       </div>
