@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-md navbar-dark bg-warning">
     <div class="container-fluid">
       <a href="#" class="navbar-brand">
         <img src="./images/logo.png" width="45" height="45" alt="logo">
@@ -22,7 +22,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0 fs-4">
           <li class="nav-item">
             <a href="index.php" class="nav-link active">Home</a>
           </li>
@@ -82,7 +82,7 @@
       </div>
 
     <div class="container col-xxl-8 px-4 py-5">
-      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="row flex-lg-row align-items-center g-5 py-5">
         <div class="col-10 col-sm-8 col-lg-6">
           <img src="./images/carousel1.jpg" alt="Interior design" class="d-block mx-lg-auto img-fluid" width="700" height="500" loading="lazy" />
         </div>
@@ -131,7 +131,7 @@
           <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
         </div>
       </div>
-      <div class="overflow-hidden" style="max-height: 30vh;">
+      <div class="overflow-hidden" style="max-height: 40vh;">
         <div class="container px-5">
           <img src="./images/carousel3.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
         </div>

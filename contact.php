@@ -62,54 +62,41 @@
         <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
       </div>
 
-      <div class="container-fluid p-5 m-5 align-content-center">
-      <form>
-          <div class="form-row">
-            <div class="form-group col-lg-6 col-6 col-xxl-6 col-md-6">
-              <label for="inputEmail4">Email</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-            </div>
-            <div class="form-group col-lg-6 col-6 col-xxl-6 col-md-6">
-              <label for="inputPassword4">Password</label>
-              <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-            </div>
+      <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+      <div class="col-lg-7 text-center text-lg-start">
+        <h1 class="display-4 fw-bold lh-1 mb-3">Send me a Message</h1>
+        <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+      </div>
+      <div class="col-md-10 mx-auto col-lg-5">
+        <form class="p-4 p-md-5 border rounded-3 bg-light">
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
           </div>
-          <div class="form-group">
-            <label for="inputAddress">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingName" placeholder="Password">
+            <label for="floatingName">Name</label>
           </div>
-          <div class="form-group">
-            <label for="inputAddress2">Address 2</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingSubject" placeholder="Password">
+            <label for="floatingSubject">Subject</label>
           </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputCity">City</label>
-              <input type="text" class="form-control" id="inputCity">
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputState">State</label>
-              <select id="inputState" class="form-control">
-                <option selected>Choose...</option>
-                <option>...</option>
-              </select>
-            </div>
-            <div class="form-group col-md-2">
-              <label for="inputZip">Zip</label>
-              <input type="text" class="form-control" id="inputZip">
-            </div>
+          <div class="form-floating mb-3">
+            <input type="url" class="form-control" id="floatingSite" placeholder="Password">
+            <label for="floatingSite">Site</label>
           </div>
-          <div class="form-group">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck">
-              <label class="form-check-label" for="gridCheck">
-                Check me out
-              </label>
-            </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control text-body" id="floatingMessage" placeholder="Password">
+            <label for="floatingMessage">Message</label>
           </div>
-          <button type="submit" class="btn btn-primary">Sign in</button>
+          <button class="w-100 btn btn-lg btn-primary" type="submit">Send Message</button>
+          <hr class="my-4">
+          <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
         </form>
       </div>
+    </div>
+  </div>
   </div>
 </div>
 

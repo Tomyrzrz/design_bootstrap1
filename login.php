@@ -7,7 +7,7 @@
   <meta name="description" content="Site of designers of home.">
   <meta name="author" content="Timo Ruiz">
   <meta name="keywords" content="home, design, interior">
-  <title>Login</title>
+  <title>Login Design</title>
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/signin.css">
   <style>
@@ -19,9 +19,12 @@
         user-select: none;
       }
 
-      body {
-        background-color: #AAA;
+      body{
+        background-image: url("images/carousel1.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
       }
+
 
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
@@ -30,28 +33,28 @@
       }
     </style>
 </head>
-<body class="text-center text-warning">    
+<body class="text-center bg-info">    
 <main class="form-signin">
   <form>
     <img class="mb-4" src="./images/login.png" alt="" width="72" height="57">
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    <h1 class="h3 mb-3 fw-normal text-white">Please sign in</h1>
 
-    <div class="form-floating">
+    <div class="form-floating mb-2">
       <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
       <label for="floatingInput">Email address</label>
     </div>
-    <div class="form-floating">
+    <div class="form-floating mb-2">
       <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">Password</label>
     </div>
 
-    <div class="checkbox mb-3">
+    <div class="checkbox mb-3 text-white">
       <label>
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div>
-    <button class="w-100 btn btn-lg btn-info" type="submit">Log in</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
+    <p class="mt-5 mb-3 text-white">&copy; 2021-2022 By <i>Timo</i> </p>
   </form>
 </main>
     
