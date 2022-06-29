@@ -33,58 +33,52 @@
       }
     </style>
 </head>
-<body class="text-center bg-info">    
-<main class="form-signin">
+<body class="text-center">    
+<main class="form-signin2">
   <form>
     <img class="mb-4" src="./images/register.png" alt="" width="72" height="57">
-    <h1 class="h3 mb-3 fw-normal text-white">Please SignIn</h1>
+    <h1 class="h3 mb-3 fw-normal text-white">Please SignUp</h1>
 
-    <div class="form-floating mb-2">
-      <input type="text" required class="form-control" id="floatingInputN" placeholder="Joel">
-      <label for="floatingInputN">Name</label>
+    <div class="row">
+      <div class="form-floating col-6 mb-2">
+        <input type="text" name="FistName" required class="form-control" id="floatingInputFN" placeholder="Lopez">
+        <label for="floatingInputFN">First Name</label>
+      </div>
+      
+      <div class="form-floating col-6 mb-2">
+        <input type="text" name="LastName" required class="form-control" id="floatingInputLN" placeholder="Sanchez">
+        <label for="floatingInputLN">Last Name</label>
+      </div>
     </div>
 
-    <div class="form-floating mb-2">
-      <input type="text" required class="form-control" id="floatingInputFN" placeholder="Lopez">
-      <label for="floatingInputFN">First Name</label>
-    </div>
 
     <div class="form-floating mb-2">
-      <input type="text" required class="form-control" id="floatingInputLN" placeholder="Sanchez">
-      <label for="floatingInputLN">Last Name</label>
-    </div>
-
-    <div class="form-floating mb-2">
-      <input type="text" required class="form-control" id="floatingInputA" placeholder="Madero #345 Col Centro">
+      <input type="text" name="Address" required class="form-control" id="floatingInputA" placeholder="Madero #345 Col Centro">
       <label for="floatingInputA">Address</label>
     </div>
 
-    <div class="form-floating mb-2">
-      <input type="tel" required class="form-control" id="floatingInputT" placeholder="name@example.com">
-      <label for="floatingInputT">Cellphone</label>
-    </div>
+    <div class="row">
+      <div class="form-floating col-6 mb-2">
+        <input type="tel" name="Cellphone" required class="form-control" id="floatingInputT" placeholder="name@example.com">
+        <label for="floatingInputT">Cellphone</label>
+      </div>
 
-    <div class="form-floating mb-2">
-      <input type="number" required class="form-control" id="floatingInputT" placeholder="name@example.com">
-      <label for="floatingInputT">Edad</label>
+      <div class="form-floating col-6 mb-2">
+        <input type="number" name="Edad" required class="form-control" id="floatingInputT" placeholder="name@example.com">
+        <label for="floatingInputT">Edad</label>
+      </div>
     </div>
     
     <div class="form-floating mb-2">
-      <input type="email" required class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input type="email" name="Email" required class="form-control" id="floatingInput" placeholder="name@example.com">
       <label for="floatingInput">Email address</label>
     </div>
 
     <div class="form-floating mb-2">
-      <input type="password" required class="form-control" id="floatingPassword" placeholder="Password">
+      <input type="password" name="Password" required class="form-control" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">Password</label>
     </div>
-
-    <div class="checkbox mb-3 text-white">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign In</button>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
     <p class="mt-5 mb-3 text-white">&copy; 2021-2022 By <i>Timo</i> </p>
   </form>
 </main>
