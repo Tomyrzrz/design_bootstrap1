@@ -37,7 +37,7 @@
 <main class="form-signin">
   <form>
     <img class="mb-4" src="./images/login.png" alt="" width="72" height="57">
-    <h1 class="h3 mb-3 fw-normal text-white">Please sign in</h1>
+    <h1 class="h3 mb-3 fw-normal text-white">Please LogIn</h1>
 
     <div class="form-floating mb-2">
       <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
@@ -53,7 +53,7 @@
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Log In</button>
     <p class="mt-5 mb-3 text-white">&copy; 2021-2022 By <i>Timo</i> </p>
   </form>
 </main>
