@@ -21,8 +21,8 @@
 
       body{
         background-image: url("images/carousel1.jpg");
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
+        background-size: cover;
+        background-attachment: fixed;
       }
 
 
@@ -35,13 +35,13 @@
 </head>
 <body class="text-center">    
 <main class="form-signin2">
-  <form>
+  <form action="./phps/enlace_registro.php" method="post">
     <img class="mb-4" src="./images/register.png" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal text-white">Please SignUp</h1>
 
     <div class="row">
       <div class="form-floating col-6 mb-2">
-        <input type="text" name="FistName" required class="form-control" id="floatingInputFN" placeholder="Lopez">
+        <input type="text" name="FirstName" required class="form-control" id="floatingInputFN" placeholder="Lopez">
         <label for="floatingInputFN">First Name</label>
       </div>
       

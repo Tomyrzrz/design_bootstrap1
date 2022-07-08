@@ -21,8 +21,8 @@
 
       body{
         background-image: url("images/carousel1.jpg");
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
+        background-size: cover;
+        background-attachment: fixed;
       }
 
 
@@ -35,24 +35,23 @@
 </head>
 <body class="text-center bg-info">    
 <main class="form-signin">
-  <form>
+  <form action="./phps/logueo.php" method="post" >
     <img class="mb-4" src="./images/login.png" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal text-white">Please LogIn</h1>
 
     <div class="form-floating mb-2">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
       <label for="floatingInput">Email address</label>
     </div>
     
     <div class="form-floating mb-2">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">Password</label>
     </div>
 
     <div class="checkbox mb-3 text-white">
       <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
+        <input type="checkbox" value="remember-me"> Remember Me </label>
     </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Log In</button>
     <p class="mt-5 mb-3 text-white">&copy; 2021-2022 By <i>Timo</i> </p>
