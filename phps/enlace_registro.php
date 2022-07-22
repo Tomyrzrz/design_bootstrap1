@@ -153,7 +153,8 @@
 
   //TAREA 
   // Investigar Lenguajes de Backend (Caracteristicas)
-  // Ejemplos: PHP, Java, JavaScript, Python, Ruby, ....
+  // Ejemplos: PHP, Java, JavaScript, Python, Ruby, Rust, kotlin, TypeScript
+  // 
   // En base a sus caracteristicas elegir cual usarias en tu proyecto.
 
 ?>

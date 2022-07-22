@@ -1,3 +1,18 @@
+<?php
+  session_start(); //Debe haber una sesion iniciada.
+  if (!isset($_SESSION['usuario'])) {
+    header('Location: ../index.php');
+    exit('GoodBye'); //Todo lo que sigue del archivo, YA no SE EJECUTA
+  }
+  require_once '../phps/conexion.php';
+  $objeto = new DataBaseServer();
+  $conexion = $objeto->getConnection();
+  $sentencia = "SELECT * FROM usuarios"; //Requieres una consulta con JOIN 
+          //Todas las tablas.
+  $resultado = mysqli_query($conexion, $sentencia);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,22 +66,51 @@
     </div>
   </nav>
 
-  <div class="container">
-    <div class="bg-dark p-2 m-3 rounded">
+  <div class="container m-4">
+    <div class="bg-dark p-3 rounded">
 
       <table class="table table-light table-bordered table-responsive">
         <thead>
           <tr>
-            <th>Welcome</th>
             <th>UID</th>
+            <th>NOMBRE</th>
+            <th>APELLIDOS</th>
+            <th>EMAIL</th>
+            <th>PASSWORD</th>
+            <th>TIPO</th>
+            <th>TOKEN</th>
+            <th colspan="2">ACCIONES</th>
           </tr>
         </thead>
         <tbody>
+          <?php 
+            $contador = 0;
+            while($fila = mysqli_fetch_assoc($resultado)){
+              $contador++;
+          ?>
           <tr>
-            <td>3ro</td>
-            <td>01</td>
+            <td> <?php echo $fila['uid']; ?> </td>
+            <td> <?php echo $fila['nombre']; ?> </td>
+            <td> <?php echo $fila['apellidos']; ?> </td>
+            <td> <?php echo $fila['email']; ?> </td>
+            <td> <?php echo $fila['password']; ?> </td>
+            <td> <?php echo $fila['tipo']; ?> </td>
+            <td> <?php echo $fila['token']; ?> </td>
+            <td> 
+              <button type="button" class="btn btn-warning">Modificar</button>  
+            </td>
+            <td> 
+              <button type="button" class="btn btn-danger">Eliminar</button>  
+            </td>
           </tr>
+          <?php } $objeto->closeConnection($conexion); ?>
         </tbody>
+        <tfoot>
+          <tr>
+            <td><b>Total de usuarios:</b></td>
+            <td> <?php echo $contador; ?> </td>
+          </tr>
+        </tfoot>
       </table>
 
   
