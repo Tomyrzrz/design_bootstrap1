@@ -7,7 +7,8 @@
   require_once '../phps/conexion.php';
   $objeto = new DataBaseServer();
   $conexion = $objeto->getConnection();
-  $sentencia = "SELECT * FROM usuarios"; //Requieres una consulta con JOIN 
+  $sentencia = "SELECT * FROM usuarios"; 
+  //Requieres una consulta con JOIN 
           //Todas las tablas.
   $resultado = mysqli_query($conexion, $sentencia);
 
@@ -69,7 +70,7 @@
   <div class="container m-4">
     <div class="bg-dark p-3 rounded">
 
-      <table class="table table-light table-bordered table-responsive">
+      <table class="table table-light table-bordered table-responsive" style="font-size:8px;">          
         <thead>
           <tr>
             <th>UID</th>
@@ -86,7 +87,7 @@
           <?php 
             $contador = 0;
             while($fila = mysqli_fetch_assoc($resultado)){
-              $contador++;
+              $contador++;    
           ?>
           <tr>
             <td> <?php echo $fila['uid']; ?> </td>
@@ -97,14 +98,22 @@
             <td> <?php echo $fila['tipo']; ?> </td>
             <td> <?php echo $fila['token']; ?> </td>
             <td> 
-              <button type="button" class="btn btn-warning">Modificar</button>  
+              <a href="../phps/modificar.php?id=<?php echo $fila['uid']; ?>" class="btn btn-warning">Modificar</a>  
             </td>
             <td> 
-              <button type="button" class="btn btn-danger">Eliminar</button>  
+              <a href="../phps/eliminar.php?id=<?php echo $fila['uid']; ?>" class="btn btn-danger">Eliminar</a>  
             </td>
           </tr>
           <?php } $objeto->closeConnection($conexion); ?>
         </tbody>
+        <!-- TAREA - jUEVES 04 DE AGOSTO
+              INVESTIGAR LOS TIPOS DE HOSTING
+              VENTAJAS - DESVENTAJAS    
+              COSTOS -->
+        <!-- TAREA - VIERNES 05 DE AGOSTO
+              INVESTIGAR LOS TIPOS DE DOMINIOS
+              VENTAJAS - DESVENTAJAS
+              COSTOS -->
         <tfoot>
           <tr>
             <td><b>Total de usuarios:</b></td>

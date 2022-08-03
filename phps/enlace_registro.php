@@ -84,7 +84,8 @@
 
   <div class="container">
     <div class="bg-light p-3 m-3 rounded">
-      <h1> <?php
+      <h1> 
+        <?php
          if(!$conexion->query($insert1))
             echo "Error insert1: " . $conexion->errno . " er " . $conexion->error;
           else
