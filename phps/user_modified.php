@@ -1,18 +1,39 @@
 <?php
-  session_start(); //Debe haber una sesion iniciada.
-  if (!isset($_SESSION['usuario'])) {
-    header('Location: ../index.php');
-    exit('GoodBye'); //Todo lo que sigue del archivo, YA no SE EJECUTA
-  }
-  require_once '../phps/conexion.php';
-  $objeto = new DataBaseServer();
-  $conexion = $objeto->getConnection();
-  $sentencia = "SELECT * FROM usuarios"; 
-  //Requieres una consulta con INNER JOIN 
-          //Todas las tablas.
-  $resultado = mysqli_query($conexion, $sentencia);
+  include_once './conexion.php';
+  session_start();
 
-?>
+  if (isset($_POST['FirstName']) && isset($_POST['LastName']) 
+    && isset($_POST['Address']) && isset($_POST['Cellphone']) 
+    && isset($_POST['Edad']) && isset($_POST['Email']) 
+    && isset($_POST['Password'])) {
+    $objeto = new DataBaseServer();
+    $conexion = $objeto->getConnection();
+    //Obtener los valores del formulario en variables.
+    $nombre = $_POST['FirstName'];
+    $apellidos = $_POST['LastName'];
+    $direccion = $_POST['Address'];
+    $edad = $_POST['Edad'];
+    $telefono = $_POST['Cellphone']; 
+    $email = $_POST['Email'];
+    $password = $_POST['Password'];
+    /* 
+    $sql = "SELECT MAX(uid) as id FROM usuarios";
+    $result = mysqli_query($conexion, $sql);
+    $fila = mysqli_fetch_array($result); */
+    $ultimo_id = $_POST['id_oculto'];
+
+    $update1 =  "UPDATE usuarios SET nombre='$nombre', apellidos='$apellidos', 
+    email='$email', password='$password', tipo='user', token=null 
+    WHERE uid=$ultimo_id";
+    $update2 =  "UPDATE datos_usuarios SET nombre='$nombre',  
+      apellidos='$apellidos', correo='$email', password='$password', 
+      tipo='user', token=null 
+      WHERE id_usuario=$ultimo_id";
+    $update3 =  "UPDATE telefonos SET telefono=$telefono 
+      WHERE id_telefono=$ultimo_id";
+
+  ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,14 +44,14 @@
   <meta name="description" content="Site of designers of home.">
   <meta name="author" content="Timo Ruiz">
   <meta name="keywords" content="home, design, interior">
-  <title>Home Admin</title>
+  <title>Actualizacion User</title>
   <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
 <body>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container-fluid">
       <a href="#" class="navbar-brand">
-        <img src="../images/logo.png" width="45" height="45" alt="logo">
+        <img src="./images/logo.png" width="45" height="45" alt="logo">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
         aria-expanded="false" aria-controls="navbarCollapse" aria-label="Toggle navigation">
@@ -60,77 +81,34 @@
             <a href="contact.php" class="nav-link">Contact</a>
           </li>
           <li class="nav-item">
-            <a href="logout.php" class="nav-link">LogOut</a>
+            <a href="login.php" class="nav-link">Login</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="container m-4">
-    <div class="bg-light p-3 rounded">
-
-      <table class="table table-dark table-bordered table-responsive" style="font-size:8px;">          
-        <thead>
-          <tr>
-            <th>UID</th>
-            <th>NOMBRE</th>
-            <th>APELLIDOS</th>
-            <th>EMAIL</th>
-            <th>PASSWORD</th>
-            <th>TIPO</th>
-            <th>TOKEN</th>
-            <th colspan="2">ACCIONES</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php 
-            $contador = 0;
-            while($fila = mysqli_fetch_assoc($resultado)){
-              $contador++;    
-          ?>
-          <tr>
-            <td> <?php echo $fila['uid']; ?> </td>
-            <td> <?php echo $fila['nombre']; ?> </td>
-            <td> <?php echo $fila['apellidos']; ?> </td>
-            <td> <?php echo $fila['email']; ?> </td>
-            <td> <?php echo $fila['password']; ?> </td>
-            <td> <?php echo $fila['tipo']; ?> </td>
-            <td> <?php echo $fila['token']; ?> </td>
-            <td> 
-              <a href="../phps/modificar.php?id=<?php echo $fila['uid']; ?>" class="btn btn-warning">Modificar</a>  
-            </td>
-            <td> 
-              <a href="../phps/eliminar.php?id=<?php echo $fila['uid']; ?>" class="btn btn-danger">Eliminar</a>  
-            </td>
-          </tr>
-          <?php } $objeto->closeConnection($conexion); ?>
-        </tbody>
-        <!-- TAREA - jUEVES 04 DE AGOSTO
-              INVESTIGAR LOS TIPOS DE HOSTING
-              VENTAJAS - DESVENTAJAS    
-              COSTOS  
-              ------- ELEGIR UN HOSTING QUE PERMITA 
-              CREAR AL MENOS 12 SUBDOMINIOS
-              CREAR BASES DE DATOS (MINIMO 13)
-              VERIFICAR EL ALMACENAMIENTO (10Gb MINIMO)
-              COMPRARLO EN GRUPO O EN 2 EQUIPOS. 
-              TRAERLO COMPRADO MAXIMO EL MIERCOLES 10 DE AGOSTO.
-            --> 
-        <!-- TAREA - VIERNES 05 DE AGOSTO
-              INVESTIGAR LOS TIPOS DE DOMINIOS
-              VENTAJAS - DESVENTAJAS
-              COSTOS -->
-        <tfoot>
-          <tr>
-            <td><b>Total de usuarios:</b></td>
-            <td> <?php echo $contador; ?> </td>
-          </tr>
-        </tfoot>
-      </table>
-
-  
-  </div>
+  <div class="container">
+    <div class="bg-light p-3 m-3 rounded">
+      <h1> 
+        <?php
+         if(!$conexion->query($update1))
+            echo "Error update1: " . $conexion->errno . " er " . $conexion->error;
+          else
+            echo "Usuario Modificado.";
+         ?>
+      </h1>
+      <p class="lead text-lg-center">
+        Actualizacion de <?php echo $nombre. " " . $apellidos; ?> realizada.
+        <a href="../admin/home.php">Regresar al Home.</a>
+      </p>
+      <div class="row m-5 p-5">
+        <div class="col-6">
+          <p class="lead text-lg-center">Dale click aqui para continuar. <a href="../admin/home.php"> Aqui</a></p>
+        </div>
+      </div>
+      
+    </div>
   </div>
 
   <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
@@ -173,3 +151,17 @@
   <script src="../js/bootstrap.js"></script>
 </body>
 </html>
+
+<?php
+
+  }else{
+    echo "Error algun dato esta incorrecto.";
+  }
+
+  //TAREA 
+  // Investigar Lenguajes de Backend (Caracteristicas)
+  // Ejemplos: PHP, Java, JavaScript, Python, Ruby, Rust, kotlin, TypeScript
+  // 
+  // En base a sus caracteristicas elegir cual usarias en tu proyecto.
+
+?>
